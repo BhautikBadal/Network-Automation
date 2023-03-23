@@ -22,7 +22,7 @@ pipeline {
     stage('Final Countdown') {
       steps {
         sh 'python countdown.py'
-        sh 'This is Stage 4'
+        sh 'echo "This is Stage 4"'
       }
     }
   }
