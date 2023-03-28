@@ -3,6 +3,7 @@ pipeline {
   stages {
     stage('Pre Checks Before Deployment') {
       steps {
+        sh 'pip install -r requirements.txt'
         sh 'python PreChecks.py'
         sh 'echo "This is Stage 1"'
       }
