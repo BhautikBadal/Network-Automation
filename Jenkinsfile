@@ -4,6 +4,7 @@ pipeline {
     stage('Install requirements') {
             steps {
                 sh 'pip install -r requirements.txt'
+                sh 'pip install requests'
             }
         }
     stage('Pre Checks Before Deployment') {
