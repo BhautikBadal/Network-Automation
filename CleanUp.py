@@ -54,7 +54,7 @@ payload=[
 
 
 response = requests.post(url,data=json.dumps(payload), headers=myheaders,auth=(switchuser,switchpassword), verify=False).json()
-print(response)
+
 
 print('Your MTU and Bandwidth RollBacked Successfull!!!')
 show_interface()
