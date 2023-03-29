@@ -27,14 +27,11 @@ payload=[
 
 response = requests.post(url,data=json.dumps(payload), headers=myheaders,auth=(switchuser,switchpassword), verify=False).json()
 
-for response in response:
-    if '100.00% packet loss' in response['result']['msg']:
-        if response['id'] == 1:
-            print("MTU packet Droped")
-            # raise Exception('Packet loss detected for id {}: {}'.format(response['id'], response['result']['msg']))
-    else:
-        if response['id'] == 1:
-            print("MTU packet has been sent!!")
+
+if '100.00% packet loss' in response['result']['msg']:
+    print("MTU packet Droped")
+else:
+    print("MTU packet has been sent!!")
 
 print("Here is your Current MTU and Bandwidth Details")
 show_interface()
