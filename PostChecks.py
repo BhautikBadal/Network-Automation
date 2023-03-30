@@ -40,10 +40,10 @@ for response in response:
     if '100.00% packet loss' in response['result']['msg']:
         if response['id'] == 1:
             print("Your LAN  connection is Down...")
-            raise Exception('Your LAN  connection is Down...')
+            raise Exception('Your LAN  connection is Down!!! Contacting Administration...')
         if response['id'] == 2:
             print("Your WAN  connection is down...")
-            raise Exception('Your WAN  connection is down...')       
+            raise Exception('Your WAN  connection is down!!! Contacting Administration...')       
     else:
         if response['id'] == 1:
             print("LAN is connected..")
