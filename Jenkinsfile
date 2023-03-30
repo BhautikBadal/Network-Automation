@@ -1,11 +1,13 @@
 pipeline {
   agent any
   stages {
-     stage('Check requirements') {
+    stage('Check requirements') {
       steps {
         script {
           def requirements = sh(returnStdout: true, script: 'pip freeze | grep requests')
-          if (!requirements.contains('requests')) {
+          if (requirements.contains('requests')) {
+            echo 'Requirements already installed'
+          } else {
             echo 'Installing requirements'
             sh 'pip install requests'
           }
