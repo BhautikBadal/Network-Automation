@@ -9,7 +9,7 @@ pipeline {
     stage('UAT Checks Before Deployment') {
       steps {
         sh 'echo "----------Stage 0 is Started----------"'
-        sh 'python3 UAT_Checks.py'
+        sh 'python3 UAT_preChecks.py'
         sh 'echo "----------Stage 0 is Finished----------"'
       }
     }
@@ -37,7 +37,7 @@ pipeline {
     stage('UAT Checks after Deployment') {
       steps {
         sh 'echo "----------Stage 4 is Started----------"'
-        sh 'python3 UAT_Checks.py'
+        sh 'python3 UAT_postChecks.py'
         sh 'echo "----------Stage 4 is Finished----------"'
       }
     }
