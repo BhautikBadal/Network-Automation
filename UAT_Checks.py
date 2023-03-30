@@ -29,6 +29,7 @@ response = requests.post(url,data=json.dumps(payload), headers=myheaders,auth=(s
 
 if '100.00% packet loss' in response['result']['msg']:
      print("MTU packet Droped")
+     raise Exception('MTU packet Droped!!!')
 else:
     print("MTU packet has been sent!!")
 
