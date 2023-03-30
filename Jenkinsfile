@@ -1,11 +1,17 @@
 pipeline {
   agent any
   stages {
-    stage('Install requirements') {
-            steps {
-                sh 'pip install requests'
-            }
+     stage('Check requirements') {
+      steps {
+        script {
+          def requirements = sh(returnStdout: true, script: 'pip freeze | grep requests')
+          if (!requirements.contains('requests')) {
+            echo 'Installing requirements'
+            sh 'pip install requests'
+          }
         }
+      }
+    }
     stage('UAT Checks Before Deployment') {
       steps {
         sh 'echo "----------Stage 0 is Started----------"'
