@@ -49,6 +49,5 @@ pipeline {
         sh 'echo "----------Stage 4 is Finished----------"'
       }
     }
-    }
   }
 }
