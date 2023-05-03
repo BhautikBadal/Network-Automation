@@ -49,12 +49,6 @@ pipeline {
         sh 'echo "----------Stage 4 is Finished----------"'
       }
     }
-    stage('Final Application Test') {
-      steps {
-        sh 'echo "----------Stage 5 is Started----------"'
-        sh 'python3 CleanUp.py'
-        sh 'echo "----------Stage 5 is Finished----------"'
-      }
     }
   }
 }
