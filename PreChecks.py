@@ -26,7 +26,7 @@ payload=[
     "jsonrpc": "2.0",
     "method": "cli",
     "params": {
-    "cmd": "ping 8.8.8.8 vrf management",
+    "cmd": "ping 10.10.10.2 vrf wan",
     "version": 1
     },
       "id": 2
